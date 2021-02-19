@@ -7,5 +7,18 @@ body {
 
 .container {
   display: flex;
+  margin: auto;
   justify-content: center;
 }
+
+.ranSettings{
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  padding: 25px;
+  
+}
+
+ .pulse::before{
+      animation: pulse-animation 3s ease-out infinite;
+ }

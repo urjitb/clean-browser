@@ -2,8 +2,14 @@
 <html>
 
 <head>
-<script src="../node_modules/materialize-css/dist/css/materialize.min.css"></script>
-<script src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossorigin="anonymous" />
   <meta charset="UTF-8">
   <title></title>
   <link rel="stylesheet" href="index.css">
@@ -11,12 +17,63 @@
 </head>
 
 <body>
-<div class="container">
+  <div class="container">
+    <div class="row">
+      <div class="ranSettings">
 
-  <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">Start Clean Browser</i></a>
+        <a class="btn-floating btn-large primary pulse"><i class="fa fa-random"></i></a>
 
-</div>
+      </div>
+      <div class="input-field col s12">
 
+        <input placeholder="User Agent" id="user-agent" type="text" class="validate">
+
+      </div>
+      <div class="input-field col s12">
+
+        <input placeholder="Window Size" id="window-size" type="text" class="validate">
+
+      </div>
+
+
+      <div class="col s6">
+        <p>Disable Plugins</p>
+      </div>
+      <div class="input-field col s6">
+
+        <div class="switch">
+          <label>
+            Off
+            <input id="plugins-disable" type="checkbox">
+            <span class="lever"></span>
+            On
+          </label>
+        </div>
+      </div>
+
+      <div class="col s6">
+        <p>Use Incognito</p>
+      </div>
+      <div class="input-field col s6">
+
+        <div class="switch">
+          <label>
+            Off
+            <input id="incognito-enable" type="checkbox">
+            <span class="lever"></span>
+          </input>
+            On
+          </label>
+        </div>
+      </div>
+
+
+      <div class="input-field col s12">
+        <a id="start-browser" class="btn-large waves-effect waves-light">Clean Browser</a>
+      </div>
+
+    </div>
 </body>
+<script src="renderer.js"></script>
 
 </html>
