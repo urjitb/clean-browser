@@ -1,12 +1,13 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, webContents } = require('electron');
 const path = require('path');
 const ipcMain = require('electron').ipcMain
+const {Builder, By, Key, until} = require('selenium-webdriver');
 
-
+const chrome = require('selenium-webdriver/chrome')
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
+let mainWindow;
 
 if (require('electron-squirrel-startup')) { 
-  
   // eslint-disable-line global-require
 
   app.quit();
@@ -16,7 +17,7 @@ const createWindow = () => {
 
   // Create the browser window.
 
-  const mainWindow = new BrowserWindow({
+   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
     autoHideMenuBar: true,
@@ -55,6 +56,23 @@ app.on('activate', () => {
 });
 
 
-ipcMain.on('browserStart:onclick', function (event, userAgent, windowSize, pluginsDisable,incognitoEnable) {
-  console.log(userAgent, windowSize, pluginsDisable,incognitoEnable)
+
+ipcMain.on('browserClick', function (event, userAgent, windowSize, pluginsDisable,incognitoEnable) {
+
+  console.log(count,userAgent, windowSize, pluginsDisable,incognitoEnable)
+  var opts = new chrome.Options();
+  opts.addArguments(['user-agent="YOUR_USER_AGENT"']);
+
+(async function example() {
+  let driver = await new Builder().withCapabilities(opts).forBrowser('chrome').build();
+  try {
+    await driver.get('http://www.google.com/ncr');
+  
+  } catch{
+ 
+  }
+})();
+
+  mainWindow.webContents.send('doSomethingWithUserAgent', userAgent + " idk");
+ 
 })

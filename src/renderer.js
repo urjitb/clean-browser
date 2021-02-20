@@ -13,5 +13,10 @@ var pluginsDisable = document.getElementById("plugins-disable");
 var incognitoEnable = document.getElementById("incognito-enable");
 
 
-    ipcRenderer.send('browserStart:onclick', userAgent.value, windowSize.value, pluginsDisable.checked, incognitoEnable.checked);
+    ipcRenderer.send('browserClick', userAgent.value, windowSize.value, pluginsDisable.checked, incognitoEnable.checked);
+
+    ipcRenderer.once('doSomethingWithUserAgent',function(event,uamodified){
+         M.toast({html: "I am a toast!" + uamodified })
+        
+    })
 }

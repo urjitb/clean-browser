@@ -12,10 +12,7 @@
     "lint": "echo \"No linting configured\""
   },
   "keywords": [],
-  "author": {
-    "name": "urjitb",
-    "email": "urjitb@gmail.com"
-  },
+  "author": "urjitb <urjitb@gmail.com>",
   "license": "MIT",
   "config": {
     "forge": {
@@ -46,7 +43,11 @@
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
-    "materialize-css": "^1.0.0-rc.2"
+    "materialize-css": "^1.0.0-rc.2",
+
+    "selenium-webdriver": "^4.0.0-beta.1",
+    "user-agents": "^1.0.568",
+    "weighted-random": "^0.1.0"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.54",
@@ -55,5 +56,13 @@
     "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
     "@electron-forge/maker-zip": "^6.0.0-beta.54",
     "electron": "11.2.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/urjitb/clean-browser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/urjitb/clean-browser/issues"
+  },
+  "homepage": "https://github.com/urjitb/clean-browser#readme"
 }
