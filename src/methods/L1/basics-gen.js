@@ -27,4 +27,4 @@ function genLang(){
     
 }
 
-module.exports = {genSize}
+module.exports = { genSize }
