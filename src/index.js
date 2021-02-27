@@ -2,6 +2,8 @@ const { app, BrowserWindow, webContents } = require('electron');
 const path = require('path');
 const ipcMain = require('electron').ipcMain
 const {Builder, By, Key, until} = require('selenium-webdriver');
+const spawnB = require('./methods/spawner.js')
+
 
 const chrome = require('selenium-webdriver/chrome')
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -59,19 +61,8 @@ app.on('activate', () => {
 
 ipcMain.on('browserClick', function (event, userAgent, windowSize, pluginsDisable,incognitoEnable) {
 
-  console.log(count,userAgent, windowSize, pluginsDisable,incognitoEnable)
-  var opts = new chrome.Options();
-  opts.addArguments(['user-agent="YOUR_USER_AGENT"']);
 
-(async function example() {
-  let driver = await new Builder().withCapabilities(opts).forBrowser('chrome').build();
-  try {
-    await driver.get('http://www.google.com/ncr');
-  
-  } catch{
- 
-  }
-})();
+  spawnB.startBrowser();
 
   mainWindow.webContents.send('doSomethingWithUserAgent', userAgent + " idk");
  

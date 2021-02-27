@@ -44,7 +44,6 @@
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
     "materialize-css": "^1.0.0-rc.2",
-
     "selenium-webdriver": "^4.0.0-beta.1",
     "user-agents": "^1.0.568",
     "weighted-random": "^0.1.0"
